@@ -1,0 +1,62 @@
+/* Subscription Page */
+.subscription {
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    margin-left: 20px;
+    transition: margin-left 0.3s ease-in-out;
+  }
+  
+  .sidebar-closed .subscription {
+    margin-left: 60px;
+  }
+  
+  /* Subscription Table */
+  .table-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .subscription-table {
+    width: 80%;
+    max-width: 900px;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .subscription-table th,
+  .subscription-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .subscription-table th {
+    background: #e14f4f;
+    color: #fff;
+    font-size: 18px;
+  }
+  
+  .subscription-table tr:nth-child(even) {
+    background: #f9f9f9;
+  }
+  
+  .subscription-table tr:hover {
+    background: #f1f1f1;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .subscription {
+      margin-left: 60px;
+    }
+  
+    .subscription-table {
+      width: 95%;
+    }
+  }
+  

@@ -1,0 +1,50 @@
+/* Stats.css */
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(22, 21, 20, 0.9); /* Semi-transparent white */
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin: 50px auto;
+    max-width: 1200px;
+  }
+  
+  .stat-item {
+    text-align: center;
+    flex: 1;
+    margin: 10px;
+    color: #333; /* Neutral text color */
+    font-family: 'Arial', sans-serif;
+    transition: transform 0.3s ease;
+  }
+  
+  .stat-item h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fefcfc; /* Golden color for numbers */
+    margin-bottom: 10px;
+  }
+  
+  .stat-item p {
+    font-size: 1rem;
+    color: #555; /* Subtle text color */
+  }
+  
+  .stat-item:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .stats-section {
+      flex-direction: column;
+      padding: 20px;
+    }
+  
+    .stat-item {
+      margin-bottom: 20px;
+    }
+  }
+  

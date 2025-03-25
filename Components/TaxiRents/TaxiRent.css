@@ -1,0 +1,119 @@
+.taxi-fares {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  background-color: #f8f8f8;
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.taxi-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  height: 500px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.taxi-card:hover {
+  transform: translateY(-5px);
+}
+
+.car-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.card-content {
+  flex-grow: 1; /* Makes content take up available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes button to bottom */
+}
+
+.card-content h3 {
+  font-size: 20px;
+  color: #333;
+  margin: 15px 0 10px;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.card-content p strong {
+  color: #000;
+}
+
+.fare-note {
+  font-size: 12px;
+  color: #999;
+  margin-top: 10px;
+}
+
+.book-taxi-btn {
+  background-color: #08199b;
+  color: #faf8f8;
+  font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: auto; /* Pushes button to bottom */
+  transition: background 0.3s ease-in-out;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.page-title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #ffcc00, #ff6600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

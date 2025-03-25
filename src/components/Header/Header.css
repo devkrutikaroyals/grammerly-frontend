@@ -1,0 +1,115 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 2px;
+  background-color: #e3e8ea; /* Updated header background color */
+  color: rgb(8, 8, 8); /* Updated text color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fixed position */
+  top: 0;
+  left: 250px; /* Align with sidebar */
+  right: 0;
+  z-index: 100; /* Ensure header is above other content */
+  transition: left 0.3s ease, width 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+.header.expanded {
+  left: 60px; /* Adjust when sidebar is closed */
+  width: calc(100% - 60px); /* Expand header width */
+}
+
+/* Dark Mode Styles */
+.header.dark {
+  background-color: #1a1a1a; /* Dark background */
+  color: #ffffff; /* Light text */
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: rgb(19, 18, 18);
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.toggle-btn:hover {
+  opacity: 0.8;
+}
+
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: auto; /* Push to the right */
+}
+
+.dark-mode-toggle:hover {
+  opacity: 0.8;
+}
+
+/* User Profile Section */
+.header-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Push to the right */
+}
+
+.profile {
+  position: relative;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  margin-left: 10px;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 150px;
+}
+
+.profile-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-dropdown ul li {
+  padding: 10px 20px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.profile-dropdown ul li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Dark Mode Styles for Profile Dropdown */
+.header.dark .profile-dropdown {
+  background-color: #1a1a1a;
+  border-color: #333;
+}
+
+.header.dark .profile-dropdown ul li {
+  color: #ffffff;
+}
+
+.header.dark .profile-dropdown ul li:hover {
+  background-color: #333;
+}

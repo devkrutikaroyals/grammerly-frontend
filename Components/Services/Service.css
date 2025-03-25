@@ -1,0 +1,171 @@
+.services {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(to bottom, #e9b56b, #dc630d);
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.services-header h2 {
+  font-size: 48px;
+  color: #161616;
+  margin-bottom: 30px;
+}
+
+.services-cards,
+.services-details {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px; /* Space between columns */
+}
+
+.services-details {
+  margin-top: 50px; /* Add gap between top and bottom cards */
+}
+
+.service-card,
+.detail-card {
+  background: #ffffff;
+  border: 2px solid #ffd1a3;
+  border-radius: 20px;
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover,
+.detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img,
+.detail-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.service-card h3,
+.detail-card h3 {
+  font-size: 1.5rem;
+  color: #500303;
+  margin: 10px 0;
+}
+
+.service-card p,
+.detail-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.read-more-btn,
+.book-now-btn {
+  background: #f6f7f8;
+  color: rgb(249, 247, 247);
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+  margin-top: auto;
+}
+
+.read-more-btn:hover {
+  background: #d2a53c;
+}
+
+.book-now-btn {
+  background: #2e23c4;
+  margin-top: 10px;
+}
+
+.book-now-btn:hover {
+  background: #aa6b18;
+}
+
+.service-details {
+  margin-top: 10px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-cards,
+  .services-details {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Reduced gap for smaller screens */
+  }
+
+  .services-details {
+    margin-top: 30px; /* Adjust gap for smaller screens */
+  }
+
+  .service-card,
+  .detail-card {
+    width: 90%;
+  }
+}
+/* Ensuring all cards maintain equal height */
+.service-card,
+.detail-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px; /* Set a fixed height for uniformity */
+}
+
+/* Button Container to Maintain Alignment */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  height: 60px; /* Ensuring uniform height */
+}
+
+/* Book Now Button Styling */
+.book-now-btn {
+  background: #2e23c4;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+  max-width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button Hover Effect */
+.book-now-btn:hover {
+  background: #aa6b18;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-card,
+  .detail-card {
+    height: auto; /* Allow flexibility on smaller screens */
+  }
+
+  .book-now-btn {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+}

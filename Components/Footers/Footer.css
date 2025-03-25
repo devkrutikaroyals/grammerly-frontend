@@ -1,0 +1,111 @@
+
+/* Footer Styles */
+.footer {
+    background: black;
+    color: #ffffff;
+    padding: 100px 20px;
+    font-family: Arial, sans-serif;
+    margin-top: 0px; /* Adds spacing from the rest of the content */
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between; /* Spaces out the columns */
+    flex-wrap: wrap; /* Makes the layout responsive */
+    gap: 20px; /* Adds spacing between columns */
+  }
+  
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    flex: 1; /* Makes columns evenly spaced */
+    min-width: 250px; /* Ensures columns don't shrink too small */
+  }
+  
+  .footer h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #facc15; /* Golden color for headings */
+  }
+  
+  .footer p,
+  .footer li {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #dddddd; /* Light gray for text */
+  }
+  
+  .footer ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer ul li a {
+    color: #ffffff; /* White text for links */
+    text-decoration: none; /* Removes underline */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  .footer ul li a:hover {
+    color: #facc15; /* Golden hover effect */
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #dddddd; /* Subtle divider line */
+    padding-top: 10px;
+    font-size: 14px;
+  }
+  
+  .footer-bottom p {
+    color: #dddddd;
+    margin: 0;
+  }
+  
+  .footer-right p {
+    margin: 5px 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column; /* Stacks columns on small screens */
+      align-items: center; /* Centers content */
+    }
+  
+    .footer-left,
+    .footer-middle,
+    .footer-right {
+      text-align: center; /* Centers text in smaller screens */
+    }
+  }
+  /* Footer Links Styling */
+.footer .links {
+  display: flex;
+  flex-direction: column; /* Stacks the links vertically */
+  gap: 10px; /* Adds space between the links */
+}
+
+.footer .links a {
+  font-size: 16px;
+  color: #ffffff; /* White text color for links */
+  text-decoration: none; /* Removes the underline */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions for color and transform */
+}
+
+.footer .links a:hover {
+  color: #facc15; /* Golden color on hover */
+  transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
+.footer .links a:active {
+  color: #facc15; /* Golden color when link is pressed */
+  transform: scale(1); /* Maintains scale when clicked */
+}
+
+
+
+  
+ 

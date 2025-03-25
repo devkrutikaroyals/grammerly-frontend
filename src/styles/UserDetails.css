@@ -1,0 +1,50 @@
+/* User Details Page */
+.user-details-container {
+    padding: 20px;
+    background: #f8f9fa;
+    min-height: 100vh;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Table Styling */
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Table Header */
+  .user-table thead {
+    background: #e14f4f;
+    color: white;
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Hover Effect */
+  .user-table tbody tr:hover {
+    background: #f1f1f1;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .user-table th,
+    .user-table td {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  

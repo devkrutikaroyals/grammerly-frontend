@@ -1,0 +1,82 @@
+/* Container Styling */
+.route-details-container {
+  max-width: 850px;
+  margin: 50px auto;
+  padding: 25px;
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.route-details-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Title Styling */
+.route-title {
+  font-size: 2.2rem;
+  color: #1a1a1a;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 18px;
+  border-bottom: 3px solid #220b94;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Description Styling */
+.route-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+  text-align: justify;
+  margin-bottom: 25px;
+  padding: 0 15px;
+}
+
+/* Button Styling */
+.go-back-button {
+  background: linear-gradient(135deg, #220b94, #5028a7);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(34, 11, 148, 0.3);
+  display: inline-block;
+}
+
+.go-back-button:hover {
+  background: linear-gradient(135deg, #18087a, #3e1a87);
+  transform: scale(1.07);
+  box-shadow: 0 6px 12px rgba(34, 11, 148, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .route-details-container {
+      padding: 20px;
+      margin: 30px 10px;
+  }
+
+  .route-title {
+      font-size: 1.8rem;
+  }
+
+  .route-description {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      padding: 0 10px;
+  }
+
+  .go-back-button {
+      font-size: 1rem;
+      padding: 12px 20px;
+  }
+}

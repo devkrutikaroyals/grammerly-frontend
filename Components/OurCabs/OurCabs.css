@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.our-cabs {
+  text-align: center;
+  padding: 20px;
+}
+
+.header h2 {
+  font-size: 2.5rem;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.cab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.cab-buttons button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cab-buttons button:hover {
+  background-color: #dbcca2;
+}
+
+.cab-cards {
+  display: flex;
+  justify-content: center;
+  gap: 23px;
+  flex-wrap: wrap;
+  margin-top: 75px;
+}
+
+.cab-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.cab-card img {
+  width: 100%;
+  height: auto;
+}
+
+.cab-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.cab-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.cab-details h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.cab-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.book-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffd54f;
+  color: #222;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.book-button:hover {
+  background-color: #ffca28;
+}

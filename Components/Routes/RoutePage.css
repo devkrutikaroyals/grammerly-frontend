@@ -1,0 +1,178 @@
+/* Page Styling */
+.route-page {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+/* Title Styling */
+.route-page h1 {
+  font-size: 2.7rem;
+  font-weight: bold;
+  margin-bottom: 35px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-bottom: 4px solid #220b94;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+/* Search Bar Container */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+/* Search Input */
+.search-bar {
+  width: 35%;
+  padding: 14px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-bar:focus {
+  border-color: #220b94;
+  box-shadow: 0 0 8px rgba(34, 11, 148, 0.3);
+}
+
+/* Grid Layout for Route Cards */
+.route-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  padding: 15px;
+}
+
+/* Route Card Styling */
+.route-card {
+  background: #ffffff;
+  border: none;
+  border-radius: 12px;
+  width: 320px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.route-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.route-card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #220b94, #5028a7);
+  top: 0;
+  left: 0;
+}
+
+/* Route Image */
+.route-image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Route Title */
+.route-card h3 {
+  font-size: 1.7rem;
+  margin: 12px 0;
+  color: #222;
+  font-weight: bold;
+}
+
+/* Route Description */
+.route-card p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+/* View More Button */
+.view-more-button {
+  background: linear-gradient(135deg, #220b94, #5028a7);
+  color: white;
+  border: none;
+  padding: 14px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(34, 11, 148, 0.3);
+}
+
+.view-more-button:hover {
+  background: linear-gradient(135deg, #18087a, #3e1a87);
+  transform: scale(1.07);
+  box-shadow: 0 6px 12px rgba(34, 11, 148, 0.5);
+}
+
+/* No Routes Message */
+.no-routes {
+  color: #d9534f;
+  font-size: 1.2rem;
+  margin-top: 25px;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .route-cards {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .search-bar {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .route-page {
+    padding: 30px 15px;
+  }
+
+  .route-page h1 {
+    font-size: 2.3rem;
+  }
+
+  .route-cards {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .search-bar {
+    width: 80%;
+  }
+
+  .route-card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .route-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .route-card p {
+    font-size: 1rem;
+  }
+}
