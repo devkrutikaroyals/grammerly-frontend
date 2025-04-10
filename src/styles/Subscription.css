@@ -1,62 +1,82 @@
-/* Subscription Page */
 .subscription {
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    margin-left: 20px;
-    transition: margin-left 0.3s ease-in-out;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.download-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #131313;
+  background: #0ceb40;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.download-btn:hover {
+  background: #218838;
+}
+
+.subscription-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.subscription-table thead {
+  background: #2eb3cb;
+  color: rgb(11, 11, 11);
+}
+
+.subscription-table th, 
+.subscription-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.subscription-table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.subscription-table tbody tr:hover {
+  background: #f1f1f1;
+}
+
+/* Loader Text */
+p {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .subscription {
+    width: 95%;
+    padding: 15px;
   }
-  
-  .sidebar-closed .subscription {
-    margin-left: 60px;
-  }
-  
-  /* Subscription Table */
-  .table-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .subscription-table {
-    width: 80%;
-    max-width: 900px;
-    border-collapse: collapse;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
+
   .subscription-table th,
   .subscription-table td {
-    padding: 15px;
-    border: 1px solid #ddd;
-    text-align: center;
+    padding: 10px;
+    font-size: 14px;
   }
-  
-  .subscription-table th {
-    background: #e14f4f;
-    color: #fff;
-    font-size: 18px;
+
+  .download-btn {
+    font-size: 14px;
+    padding: 8px 16px;
   }
-  
-  .subscription-table tr:nth-child(even) {
-    background: #f9f9f9;
-  }
-  
-  .subscription-table tr:hover {
-    background: #f1f1f1;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .subscription {
-      margin-left: 60px;
-    }
-  
-    .subscription-table {
-      width: 95%;
-    }
-  }
-  
+}

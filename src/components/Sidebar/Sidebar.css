@@ -1,65 +1,121 @@
+/* Sidebar */
 .sidebar {
-  width: 200px;
-  background-color: #ffffff;
-  color: black;
+  width: 250px;
   height: 100vh;
+  background-color:#b9ecd6;
+  color: rgb(15, 15, 15);
   position: fixed;
-  transition: width 0.3s ease;
-  overflow: hidden;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  overflow-y:scroll;
+  transition: width 0.3s ease-in-out;
+  z-index: 1000; /* Ensures sidebar is above other elements */
 }
 
-.sidebar.dark {
-  background-color: #1e1e1e;
-  color: white;
-}
-
-.sidebar.collapsed {
+/* Collapsed Sidebar */
+.sidebar.closed {
   width: 80px;
 }
 
+/* Logo Section */
+
 .sidebar-logo {
   display: flex;
-  justify-content: center;
   align-items: center;
   padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.sidebar-logo img {
-  width: 70px; /* Adjust based on requirement */
-  height: auto;
-  object-fit: contain;
+/* Logo Image */
+.logo-image {
+  width: 140px; /* Adjust as needed */
+  height: 100px;
+  margin-left: 40px; /* Adjust this value to move it manually */
 }
 
-.sidebar ul {
-  list-style-type: none;
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide full logo when sidebar is collapsed */
+.sidebar.closed .logo {
+  display: none;
+}
+
+/* Hide icon when sidebar is expanded */
+.sidebar:not(.closed) .logo-icon {
+  display: none;
+}
+
+/* Sidebar Links */
+.sidebar-menu {
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.sidebar ul li {
-  padding: 15px;
-  display: flex;
-  align-items: center;
+.sidebar-menu li {
+  padding: 25px;
 }
 
-.sidebar ul li a {
+.sidebar-menu li a {
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  color: inherit;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
+  color: rgb(9, 9, 9);
+  padding: 10px 20px;
+  transition: 0.3s;
 }
 
-.sidebar ul li a svg {
-  font-size: 34px;
+/* Keep icons visible when sidebar is collapsed */
+.sidebar-menu li a .icon {
+  font-size: 24px;
+  width: 40px;  /* Set fixed width to align properly */
+  text-align: center; /* Center icon */
+  transition: margin-right 0.3s ease;
 }
 
-
-.dashboard-grid {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+/* Hide text but keep icons visible */
+.sidebar.closed .sidebar-menu li a span {
+  display: none;
 }
 
+/* Adjust icon spacing when sidebar is closed */
+.sidebar.closed .sidebar-menu li a .icon {
+  margin-right: 0; /* Remove extra space */
+  display: inline-block;  /* Ensure icon is visible */
+}
 
+/* Hover & Active State */
+.sidebar-menu li a:hover,
+.sidebar-menu li a.active {
+  background: #ada2a8;
+  border-radius: 5px;
+}
 
+/* Main Content Adjustment */
+.main-content {
+  margin-left: 250px;
+  transition: margin-left 0.3s ease-in-out;
+  padding: 20px;
+}
+
+.sidebar.closed + .main-content {
+  margin-left: 80px;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+  .sidebar.closed {
+    width: 60px;
+  }
+  .main-content {
+    margin-left: 200px;
+  }
+  .sidebar.closed + .main-content {
+    margin-left: 60px;
+  }
+}

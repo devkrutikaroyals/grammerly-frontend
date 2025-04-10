@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { FaTachometerAlt, FaUser, FaFileInvoiceDollar, FaUsers } from "react-icons/fa";
-import logo from "../../images/log4.png"; // Adjust the path to your logo
+import { FaTachometerAlt, FaUser, FaFileInvoiceDollar, FaUsers, FaHistory } from "react-icons/fa";
+import logo from "../../images/log4.png";
 import "./Sidebar.css";
 
 const Sidebar = ({ isOpen, isDarkMode }) => {
@@ -10,7 +10,6 @@ const Sidebar = ({ isOpen, isDarkMode }) => {
       {/* Logo Section */}
       <div className="sidebar-logo">
         <img src={logo} alt="Maulayy Logo" className="logo-image" />
-      
       </div>
 
       {/* Menu Items */}
@@ -40,8 +39,14 @@ const Sidebar = ({ isOpen, isDarkMode }) => {
           </NavLink>
         </li>
         <li>
+          <NavLink to="/history" className={({ isActive }) => (isActive ? "active" : "")}>
+            <FaHistory className="icon" />
+            {isOpen && <span>History</span>}
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="/paymentHistory" className={({ isActive }) => (isActive ? "active" : "")}>
-            <FaUser className="icon" />
+            <FaFileInvoiceDollar className="icon" /> {/* Changed to match financial context */}
             {isOpen && <span>Payment History</span>}
           </NavLink>
         </li>

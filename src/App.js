@@ -8,7 +8,8 @@ import Subscription from "./pages/Subscription";
 import UserDetails from "./pages/UserDetails";
 import Unsubscription from "./pages/Unsubscription";
 import Settings from "./components/Settings";
-import PaymentHistory from "./pages/PaymentHistory"; 
+import PaymentHistory from "./pages/PaymentHistory";
+import HistoryPage from "./pages/History"; // Import the new HistoryPage component
 import "./App.css";
 
 const App = () => {
@@ -40,50 +41,40 @@ const App = () => {
   return (
     <Router>
       <div className={`app ${isDarkMode ? "dark" : "light"} ${isSidebarOpen ? "sidebar-open" : "sidebar-closed"}`}>
-        <Routes>
-          {/* Show Login Page if not authenticated */}
-          {!isAuthenticated ? (
-            <>
-              <Route path="/" element={<LoginForm setIsAuthenticated={setIsAuthenticated} />} />
-              <Route path="*" element={<Navigate to="/" />} />
-            </>
-          ) : (
-            <>
-              {/* Protected Routes with Header & Sidebar */}
-              <Route
-                path="/*"
-                element={
-                  <>
-                    <Header
-                      toggleSidebar={toggleSidebar}
-                      isSidebarOpen={isSidebarOpen}
-                      toggleDarkMode={toggleDarkMode}
-                      isDarkMode={isDarkMode}
-                      handleLogout={handleLogout}
-                    />
-                    <div className="content">
-                      <Sidebar isOpen={isSidebarOpen} isDarkMode={isDarkMode} />
-                      <div
-                        className="main-container"
-                        style={{ flex: 1, marginLeft: isSidebarOpen ? "300px" : "130px", transition: "margin 0.3s ease" }}
-                      >
-                        <Routes>
-                          <Route path="/dashboard" element={<Dashboard />} />
-                          <Route path="/subscription" element={<Subscription />} />
-                          <Route path="/user-details" element={<UserDetails />} />
-                          <Route path="/unsubscription" element={<Unsubscription />} />
-                          <Route path="/settings" element={<Settings />} />
-                          <Route path="/paymentHistory" element={<PaymentHistory />} />
-                          <Route path="*" element={<Navigate to="/dashboard" />} />
-                        </Routes>
-                      </div>
-                    </div>
-                  </>
-                }
-              />
-            </>
-          )}
-        </Routes>
+        {!isAuthenticated ? (
+          <Routes>
+            <Route path="/" element={<LoginForm setIsAuthenticated={setIsAuthenticated} />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        ) : (
+          <>
+            <Header
+              toggleSidebar={toggleSidebar}
+              isSidebarOpen={isSidebarOpen}
+              toggleDarkMode={toggleDarkMode}
+              isDarkMode={isDarkMode}
+              handleLogout={handleLogout}
+            />
+            <div className="content">
+              <Sidebar isOpen={isSidebarOpen} isDarkMode={isDarkMode} />
+              <div
+                className="main-container"
+                style={{ flex: 1, marginLeft: isSidebarOpen ? "250px" : "80px", transition: "margin 0.3s ease" }}
+              >
+                <Routes>
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/subscription" element={<Subscription />} />
+                  <Route path="/user-details" element={<UserDetails />} />
+                  <Route path="/unsubscription" element={<Unsubscription />} />
+                  <Route path="/settings" element={<Settings />} />
+                  <Route path="/paymentHistory" element={<PaymentHistory />} />
+                  <Route path="/history" element={<HistoryPage />} />
+                  <Route path="*" element={<Navigate to="/dashboard" />} />
+                </Routes>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </Router>
   );

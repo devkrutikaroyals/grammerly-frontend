@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   padding: 10px 2px;
-  background-color: #e3e8ea; /* Updated header background color */
+  background: linear-gradient(135deg, #e4e6e6,#75e1b2);
   color: rgb(8, 8, 8); /* Updated text color */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed; /* Fixed position */
