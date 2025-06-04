@@ -12,7 +12,7 @@ const Sidebar = ({ isOpen }) => {
         <img src={logo} alt="Maulayy Logo" className="logo-image" />
       </div>
 
-      {/* Menu Items */}
+    
       <ul className="sidebar-menu">
         <li>
           <NavLink to="/dashboard" className={({ isActive }) => (isActive ? "active" : "")}>
