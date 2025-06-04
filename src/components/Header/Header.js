@@ -1,36 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header = ({ toggleSidebar, isSidebarOpen, toggleDarkMode, isDarkMode, handleLogout }) => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const [profilePhoto, setProfilePhoto] = useState(localStorage.getItem("profilePhoto") || "default-profile.png");
-  const [adminName, setAdminName] = useState("");
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const storedPhoto = localStorage.getItem("profilePhoto");
-    if (storedPhoto) {
-      setProfilePhoto(storedPhoto);
-    }
-
-    const storedAdmin = JSON.parse(localStorage.getItem("admin"));
-    if (storedAdmin && storedAdmin.name) {
-      setAdminName(storedAdmin.name);
-    }
-  }, []);
+  const navigate = useNavigate(); // Use navigate for redirection
 
   const toggleProfile = () => {
     setIsProfileOpen(!isProfileOpen);
   };
 
   const handleLogoutClick = () => {
-    handleLogout(); 
-    navigate('/');
+    handleLogout(); // Clear authentication state
+    navigate('/'); // Redirect to login page
   };
 
   const handleSettingsClick = () => {
-    navigate('/settings');
+    navigate('/settings'); // Redirect to Settings page
   };
 
   return (
@@ -40,18 +26,14 @@ const Header = ({ toggleSidebar, isSidebarOpen, toggleDarkMode, isDarkMode, hand
       </button>
       <h1>Admin Panel</h1>
       <div className="header-right">
-        <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+        {/* <button className="dark-mode-toggle" onClick={toggleDarkMode}>
           {isDarkMode ? '🌞' : '🌙'}
-        </button>
-
+        </button> */}
         <div className="profile" onClick={toggleProfile}>
-          <img src={profilePhoto} alt="Profile" className="profile-icon" />
-          <p className="profile-name">{adminName}</p>
-
+          <span className="profile-icon">👤</span>
           {isProfileOpen && (
             <div className="profile-dropdown">
               <ul>
-                <li>{adminName}</li>
                 <li onClick={handleSettingsClick} style={{ cursor: 'pointer' }}>Settings</li>
                 <li onClick={handleLogoutClick} style={{ cursor: 'pointer', color: 'red' }}>
                   Logout

@@ -4,9 +4,9 @@ import { FaTachometerAlt, FaUser, FaFileInvoiceDollar, FaUsers, FaHistory } from
 import logo from "../../images/log4.png";
 import "./Sidebar.css";
 
-const Sidebar = ({ isOpen, isDarkMode }) => {
+const Sidebar = ({ isOpen }) => {
   return (
-    <div className={`sidebar ${isOpen ? "open" : "closed"} ${isDarkMode ? "dark" : ""}`}>
+    <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
       {/* Logo Section */}
       <div className="sidebar-logo">
         <img src={logo} alt="Maulayy Logo" className="logo-image" />
@@ -46,7 +46,7 @@ const Sidebar = ({ isOpen, isDarkMode }) => {
         </li>
         <li>
           <NavLink to="/paymentHistory" className={({ isActive }) => (isActive ? "active" : "")}>
-            <FaFileInvoiceDollar className="icon" /> {/* Changed to match financial context */}
+            <FaUser className="icon" />
             {isOpen && <span>Payment History</span>}
           </NavLink>
         </li>

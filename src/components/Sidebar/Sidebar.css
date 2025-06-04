@@ -1,15 +1,17 @@
-/* Sidebar */
+/* Sidebar Container */
 .sidebar {
   width: 250px;
   height: 100vh;
-  background-color:#b9ecd6;
+  background-color: #b9ecd6;
   color: rgb(15, 15, 15);
   position: fixed;
   top: 0;
   left: 0;
-  overflow-y:scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   transition: width 0.3s ease-in-out;
-  z-index: 1000; /* Ensures sidebar is above other elements */
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Collapsed Sidebar */
@@ -17,81 +19,81 @@
   width: 80px;
 }
 
-/* Logo Section */
+/* Dark mode */
+.sidebar.dark {
+  background-color: #1e1e2f;
+  color: #fff;
+}
 
+/* Logo Section */
 .sidebar-logo {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 20px;
   border-bottom: 1px solid #e0e0e0;
 }
 
 /* Logo Image */
 .logo-image {
-  width: 140px; /* Adjust as needed */
+  width: 140px;
   height: 100px;
-  margin-left: 40px; /* Adjust this value to move it manually */
+  transition: all 0.3s ease-in-out;
 }
 
-.sidebar::-webkit-scrollbar {
-  display: none;
+/* Logo in collapsed mode */
+.sidebar.closed .logo-image {
+  width: 40px;
+  height: auto;
+  margin: 0 auto;
 }
 
-/* Hide full logo when sidebar is collapsed */
-.sidebar.closed .logo {
-  display: none;
-}
-
-/* Hide icon when sidebar is expanded */
-.sidebar:not(.closed) .logo-icon {
-  display: none;
-}
-
-/* Sidebar Links */
+/* Sidebar Menu */
 .sidebar-menu {
   list-style: none;
-  padding: 0;
+  padding: 20px 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Increased gap here */
 }
 
+/* Menu Items */
 .sidebar-menu li {
-  padding: 25px;
+  padding: 0 10px;
 }
 
+/* Menu Links */
 .sidebar-menu li a {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: rgb(9, 9, 9);
-  padding: 10px 20px;
-  transition: 0.3s;
+  color: inherit;
+  font-size: 16px;
+  padding: 12px 20px;
+  border-left: 4px solid transparent;
+  border-radius: 5px;
+  transition: background 0.2s ease, border-left 0.2s ease;
 }
 
-/* Keep icons visible when sidebar is collapsed */
+/* Icon Style */
 .sidebar-menu li a .icon {
-  font-size: 24px;
-  width: 40px;  /* Set fixed width to align properly */
-  text-align: center; /* Center icon */
+  font-size: 20px;
+  width: 40px;
+  text-align: center;
+  margin-right: 10px;
   transition: margin-right 0.3s ease;
 }
 
-/* Hide text but keep icons visible */
+/* Hide text in collapsed mode */
 .sidebar.closed .sidebar-menu li a span {
   display: none;
 }
 
-/* Adjust icon spacing when sidebar is closed */
 .sidebar.closed .sidebar-menu li a .icon {
-  margin-right: 0; /* Remove extra space */
-  display: inline-block;  /* Ensure icon is visible */
+  margin-right: 0;
 }
 
-/* Hover & Active State */
-.sidebar-menu li a:hover,
-.sidebar-menu li a.active {
-  background: #ada2a8;
-  border-radius: 5px;
-}
 
 /* Main Content Adjustment */
 .main-content {
@@ -102,20 +104,4 @@
 
 .sidebar.closed + .main-content {
   margin-left: 80px;
-}
-
-/* Responsive Sidebar */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 200px;
-  }
-  .sidebar.closed {
-    width: 60px;
-  }
-  .main-content {
-    margin-left: 200px;
-  }
-  .sidebar.closed + .main-content {
-    margin-left: 60px;
-  }
 }

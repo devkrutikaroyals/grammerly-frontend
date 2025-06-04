@@ -1,17 +1,18 @@
 .header {
   display: flex;
   align-items: center;
-  padding: 10px 2px;
-  background: linear-gradient(135deg, #e4e6e6,#75e1b2);
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #e4e6e6,#75e1b2); /* Gradient background */
   color: rgb(8, 8, 8); /* Updated text color */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed; /* Fixed position */
   top: 0;
   left: 250px; /* Align with sidebar */
   right: 0;
-  z-index: 100; /* Ensure header is above other content */
+  z-index: 1000; /* Ensure header is above other content */
   transition: left 0.3s ease, width 0.3s ease, background-color 0.3s ease; /* Smooth transition */
 }
+
 
 .header.expanded {
   left: 60px; /* Adjust when sidebar is closed */
@@ -33,22 +34,6 @@
   margin-right: 20px;
 }
 
-.toggle-btn:hover {
-  opacity: 0.8;
-}
-
-.dark-mode-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  margin-left: auto; /* Push to the right */
-}
-
-.dark-mode-toggle:hover {
-  opacity: 0.8;
-}
 
 /* User Profile Section */
 .header-right {
@@ -64,17 +49,15 @@
 }
 
 .profile-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ccc;
-  margin-left: 10px;
+  font-size: 24px;
+  margin-right: 20px;
+  color: white; /* Ensure the icon is visible */
+
 }
 
 .profile-dropdown {
   position: absolute;
-  top: 10%;
+  top: 100%;
   right: 0;
   background-color: #ffffff;
   border: 1px solid #ddd;
@@ -111,5 +94,5 @@
 }
 
 .header.dark .profile-dropdown ul li:hover {
-  background-color: #333;
+  background-color: #333;
 }
